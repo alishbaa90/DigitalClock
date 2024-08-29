@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Clock</title>
+    <style>
+        body {
+            background: linear-gradient(to right, #ffb3b3, #b3cde0, #b3e2b0, #f3e5ab, #d5a6f0);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Full height viewport */
+            margin: 0;
+        }
+        .box {
+            height: 170px;
+            width: 650px;
+            background-color: rgba(255, 255, 255, 0.5); /* Semi-transparent background */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 20px;
+            position: relative; /* Ensure positioning context */
+            z-index: 1; /* Ensure it's above the background */
+            backdrop-filter: blur(40px);
+            box-shadow: 0 0 0 0 rgba(0,0,0,0);
+
+        }
+        .box span {
+            font-size: 90px;
+            display: inline-block;
+            position: relative;
+            text-align: center;
+            margin: 20px;
+            color: rgb(54, 8, 54);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            top: -10%;
+        }
+        .box span::after {
+            font-size: 15px;
+            position: absolute;
+            top: 90%;
+            right: 15%;
+            transform: translateX(-2%);
+        }
+        #hrs::after {
+            content: 'HOURS';
+        }
+        #mins::after {
+            content: 'MINUTES';
+        }
+        #secs::after {
+            content: 'SECONDS';
+        }
+        .box::before{
+            content: '';
+            width: 180px;
+            height: 180px;
+            background: #b3e2b0;
+            border-radius: 5px;
+            position: absolute;
+            left: -50px;
+            top: -50px;
+            z-index: -1;
+        }
+        .box::after{
+            content: '';
+            width: 180px;
+            height: 180px;
+            background: #d5a6f0;
+            border-radius: 50%;
+            position: absolute;
+            right: -30px;
+            bottom: -50px;
+            z-index: -1;
+        }
+    </style>
+</head>
+<body>
+    <div class="box" id="clockbox">
+        <span id="hrs">00</span>
+        <span>:</span>
+        <span id="mins">00</span>
+        <span>:</span>
+        <span id="secs">00</span>
+    </div>
+    <script>
+        const ClockBox = document.getElementById("clockbox");
+        const Hours = document.getElementById("hrs");
+        const Mins = document.getElementById("mins");
+        const Secs = document.getElementById("secs");
+
+        setInterval(() => {
+            let clock = new Date();
+            Hours.innerHTML = (clock.getHours() < 10 ? "0" : "") + clock.getHours();
+            Mins.innerHTML = (clock.getMinutes() < 10 ? "0" : "") + clock.getMinutes();
+            Secs.innerHTML = (clock.getSeconds() < 10 ? "0" : "") + clock.getSeconds();
+        }, 1000);
+    </script>
+</body>
+</html>
