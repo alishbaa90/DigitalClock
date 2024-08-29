@@ -9,10 +9,6 @@ A simple digital clock that displays the current time in hours, minutes, and sec
 3. Works across different web browsers and devices.
 4. Adjusts size and position depending on the device's screen size and resolution.
 
-## Screenshot
-
-![Digital Clock Screenshot](Desktop/WebDev/DigitalClock/Screenshot.png)
-
 ## Programming Languages Used
 
 ![HTML5](https://img.shields.io/badge/-HTML5-E34F26?logo=html5&logoColor=white&style=flat)
