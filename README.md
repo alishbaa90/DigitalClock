@@ -11,7 +11,7 @@ A simple digital clock that displays the current time in hours, minutes, and sec
 
 ## Screenshot
 
-![Digital Clock Screenshot](WebDev/DigitalClock/screenshot.png)
+![Digital Clock Screenshot](WebDev/DigitalClock/Screenshot.png)
 
 ## Programming Languages Used
 
